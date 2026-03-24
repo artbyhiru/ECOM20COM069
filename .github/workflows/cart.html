@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Fashion Hub (Table Edition)</title>
+</head>
+
+<body bgcolor="#f8fafc" text="#1e293b">
+    <!-- Main Layout Table -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!-- Header -->
+        <tr>
+            <td bgcolor="#ffffff" style="border-bottom: 1px solid #e2e8f0;">
+                <table width="90%" align="center" border="0" cellpadding="20" cellspacing="0">
+                    <tr>
+                        <td align="left">
+                            <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: #0f172a;">
+                                Fashion<span style="color: #4f46e5;">Hub</span>
+                            </a>
+                        </td>
+                        <td align="right">
+                            <table border="0" cellpadding="0" cellspacing="15">
+                                <tr>
+                                    <td><a href="index.html" style="text-decoration: none; color: #1e293b;">Home</a></td>
+                                    <td><a href="index.html#about" style="text-decoration: none; color: #1e293b;">About</a></td>
+                                    <td><a href="index.html#services" style="text-decoration: none; color: #1e293b;">Services</a></td>
+                                    <td><a href="products.html" style="text-decoration: none; color: #1e293b;">Products</a></td>
+                                    <td><a href="contact.html" style="text-decoration: none; color: #1e293b;">Contact</a></td>
+                                    <td><a href="login.html" style="text-decoration: none; color: #1e293b;">Login</a></td>
+                                    <td>
+                                        <a href="cart.html" style="text-decoration: none; color: #4f46e5; font-weight: bold; position: relative;">
+                                            Cart (<span class="cart-count">0</span>)
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Cart Content -->
+        <tr>
+            <td bgcolor="#ffffff" style="padding: 60px 5%;">
+                <table width="100%" max-width="800" align="center" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h1 align="center" style="font-size: 36px; color: #0f172a; margin-bottom: 40px;">Your Shopping Cart</h1>
+                            
+                            <!-- Empty State -->
+                            <div id="empty-state-view" style="display: none; text-align: center; padding: 60px 0;">
+                                <h2 style="font-size: 28px; color: #0f172a; margin-bottom: 15px;">Your cart is empty</h2>
+                                <p style="color: #64748b; margin-bottom: 30px;">Looks like you haven't added anything yet.</p>
+                                <a href="products.html" style="background: #4f46e5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold;">Start Shopping</a>
+                            </div>
+
+                            <!-- Populated Cart -->
+                            <div id="cart-content-view" style="display: none;">
+                                <table width="100%" border="0" cellpadding="20" cellspacing="0" style="border: 1px solid #e2e8f0; border-radius: 12px;" id="cart-items-table">
+                                    <!-- Items will be injected here as rows -->
+                                </table>
+
+                                <table width="100%" border="0" cellpadding="30" cellspacing="0" style="margin-top: 30px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc;">
+                                    <tr>
+                                        <td align="left">
+                                            <span style="color: #64748b; font-size: 18px;">Total Amount</span>
+                                            <h3 id="order-total" style="color: #0f172a; font-size: 32px; margin: 5px 0 0;">Rs. 0</h3>
+                                        </td>
+                                        <td align="right">
+                                            <a href="checkout.html" style="background: #0f172a; color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; display: inline-block;">
+                                                Proceed to Checkout
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td bgcolor="#0f172a" style="padding: 60px 5%; color: #94a3b8;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="left" style="font-size: 24px; font-weight: bold; color: white;">
+                            Fashion<span style="color: #4f46e5;">Hub</span>
+                        </td>
+                        <td align="right">
+                            © 2026. Designed for you.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('fashionHubCart')) || [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+            renderCart();
+        });
+
+        function updateCartBadge() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badges = document.querySelectorAll('.cart-count');
+            badges.forEach(badge => {
+                badge.innerText = totalCount;
+            });
+        }
+
+        function renderCart() {
+            const table = document.getElementById('cart-items-table');
+            const emptyState = document.getElementById('empty-state-view');
+            const cartContent = document.getElementById('cart-content-view');
+            const orderTotal = document.getElementById('order-total');
+
+            if (cart.length === 0) {
+                emptyState.style.display = 'block';
+                cartContent.style.display = 'none';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            cartContent.style.display = 'block';
+
+            table.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const row = document.createElement('tr');
+                row.style.borderBottom = "1px solid #e2e8f0";
+                row.innerHTML = `
+                    <td width="120">
+                        <img src="${item.image}" alt="${item.name}" width="100" style="border-radius: 8px;">
+                    </td>
+                    <td align="left">
+                        <h4 style="margin: 0; font-size: 20px; color: #0f172a;">${item.name}</h4>
+                        <p style="margin: 5px 0 0; color: #4f46e5; font-weight: bold;">Rs. ${item.price.toLocaleString()}</p>
+                    </td>
+                    <td align="right">
+                        <table border="0" cellpadding="0" cellspacing="10">
+                            <tr>
+                                <td><button onclick="updateQuantity('${item.id}', -1)" style="width:30px; height:30px; border-radius:15px; border:1px solid #e2e8f0; cursor:pointer;">-</button></td>
+                                <td style="font-weight:bold; font-size:18px;">${item.quantity}</td>
+                                <td><button onclick="updateQuantity('${item.id}', 1)" style="width:30px; height:30px; border-radius:15px; border:1px solid #e2e8f0; cursor:pointer;">+</button></td>
+                                <td style="padding-left: 20px;">
+                                    <button onclick="removeCartItem('${item.id}')" style="background:#fee2e2; color:#ef4444; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold;">Remove</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                `;
+                table.appendChild(row);
+            });
+
+            orderTotal.innerText = 'Rs. ' + total.toLocaleString();
+        }
+
+        function updateQuantity(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+                localStorage.setItem('fashionHubCart', JSON.stringify(cart));
+                updateCartBadge();
+                renderCart();
+            }
+        }
+
+        function removeCartItem(id) {
+            cart = cart.filter(i => i.id !== id);
+            localStorage.setItem('fashionHubCart', JSON.stringify(cart));
+            updateCartBadge();
+            renderCart();
+        }
+    </script>
+</body>
+
+</html>

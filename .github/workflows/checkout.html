@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Fashion Hub (Table Edition)</title>
+</head>
+
+<body bgcolor="#f8fafc" text="#1e293b">
+    <!-- Main Layout Table -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!-- Header -->
+        <tr>
+            <td bgcolor="#ffffff" style="border-bottom: 1px solid #e2e8f0;">
+                <table width="90%" align="center" border="0" cellpadding="20" cellspacing="0">
+                    <tr>
+                        <td align="left">
+                            <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: #0f172a;">
+                                Fashion<span style="color: #4f46e5;">Hub</span>
+                            </a>
+                        </td>
+                        <td align="right">
+                            <table border="0" cellpadding="0" cellspacing="15">
+                                <tr>
+                                    <td><a href="index.html" style="text-decoration: none; color: #1e293b;">Home</a></td>
+                                    <td><a href="products.html" style="text-decoration: none; color: #1e293b;">Products</a></td>
+                                    <td><a href="contact.html" style="text-decoration: none; color: #1e293b;">Contact</a></td>
+                                    <td><a href="login.html" style="text-decoration: none; color: #1e293b;">Login</a></td>
+                                    <td>
+                                        <a href="cart.html" style="text-decoration: none; color: #1e293b; position: relative;">
+                                            Cart (<span class="cart-count">0</span>)
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Checkout Form Content -->
+        <tr>
+            <td bgcolor="#ffffff" style="padding: 60px 0;">
+                <table width="500" align="center" border="0" cellpadding="40" cellspacing="0" style="border: 1px solid #e2e8f0; border-radius: 15px; background-color: #ffffff;">
+                    <tr>
+                        <td>
+                            <h2 align="center" style="font-size: 32px; color: #0f172a; margin: 0 0 30px;">Secure Checkout</h2>
+                            <form id="checkoutForm">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <!-- Full Name -->
+                                    <tr>
+                                        <td style="padding-bottom: 20px;">
+                                            <label style="display: block; font-weight: bold; margin-bottom: 8px;">Full Name</label>
+                                            <input type="text" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box;" placeholder="John Doe" required>
+                                        </td>
+                                    </tr>
+                                    <!-- Email -->
+                                    <tr>
+                                        <td style="padding-bottom: 20px;">
+                                            <label style="display: block; font-weight: bold; margin-bottom: 8px;">Email Address</label>
+                                            <input type="email" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box;" placeholder="john@example.com" required>
+                                        </td>
+                                    </tr>
+                                    <!-- Phone -->
+                                    <tr>
+                                        <td style="padding-bottom: 20px;">
+                                            <label style="display: block; font-weight: bold; margin-bottom: 8px;">Phone Number</label>
+                                            <input type="tel" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box;" placeholder="+94 77 XXXXXXX" required>
+                                        </td>
+                                    </tr>
+                                    <!-- Address -->
+                                    <tr>
+                                        <td style="padding-bottom: 20px;">
+                                            <label style="display: block; font-weight: bold; margin-bottom: 8px;">Delivery Address</label>
+                                            <input type="text" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box;" placeholder="123 Main Street, City" required>
+                                        </td>
+                                    </tr>
+                                    <!-- Payment -->
+                                    <tr>
+                                        <td style="padding-bottom: 30px;">
+                                            <label style="display: block; font-weight: bold; margin-bottom: 8px;">Payment Method</label>
+                                            <select style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; background-color: #f8fafc;" required>
+                                                <option value="" disabled selected>Select a payment method...</option>
+                                                <option value="cod">Cash on Delivery</option>
+                                                <option value="card">Credit/Debit Card</option>
+                                                <option value="transfer">Bank Transfer</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <!-- Submit -->
+                                    <tr>
+                                        <td>
+                                            <button type="submit" style="width: 100%; background: #0f172a; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 18px;">
+                                                Complete Order
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                            <div id="message" style="margin-top: 20px; text-align: center;"></div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td bgcolor="#0f172a" style="padding: 60px 5%; color: #94a3b8;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="left" style="font-size: 24px; font-weight: bold; color: white;">
+                            Fashion<span style="color: #4f46e5;">Hub</span>
+                        </td>
+                        <td align="right">
+                            © 2026. Designed for you.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('fashionHubCart')) || [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+            setupCheckoutForm();
+        });
+
+        function updateCartBadge() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badges = document.querySelectorAll('.cart-count');
+            badges.forEach(badge => {
+                badge.innerText = totalCount;
+            });
+        }
+
+        function setupCheckoutForm() {
+            const form = document.getElementById("checkoutForm");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                
+                if (cart.length === 0) {
+                    alert("Your cart is empty!");
+                    return;
+                }
+                
+                const btn = this.querySelector('button[type="submit"]');
+                const messageEl = document.getElementById("message");
+                
+                btn.innerText = 'Processing...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    messageEl.innerHTML = '<b style="color: #059669;">Your order has been placed successfully!</b>';
+                    btn.innerText = 'Order Confirmed ✓';
+                    btn.style.background = '#059669';
+                    
+                    cart = [];
+                    localStorage.setItem('fashionHubCart', JSON.stringify(cart));
+                    updateCartBadge();
+                    form.reset();
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+
+</html>

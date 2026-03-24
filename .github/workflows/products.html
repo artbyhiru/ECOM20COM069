@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | Fashion Hub (Table Edition)</title>
+</head>
+
+<body bgcolor="#f8fafc" text="#1e293b">
+    <!-- Main Layout Table -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!-- Header -->
+        <tr>
+            <td bgcolor="#ffffff" style="border-bottom: 1px solid #e2e8f0;">
+                <table width="90%" align="center" border="0" cellpadding="20" cellspacing="0">
+                    <tr>
+                        <td align="left">
+                            <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: #0f172a;">
+                                Fashion<span style="color: #4f46e5;">Hub</span>
+                            </a>
+                        </td>
+                        <td align="right">
+                            <table border="0" cellpadding="0" cellspacing="15">
+                                <tr>
+                                    <td><a href="index.html" style="text-decoration: none; color: #1e293b;">Home</a></td>
+                                    <td><a href="index.html#about" style="text-decoration: none; color: #1e293b;">About</a></td>
+                                    <td><a href="index.html#services" style="text-decoration: none; color: #1e293b;">Services</a></td>
+                                    <td><a href="products.html" style="text-decoration: none; color: #4f46e5; font-weight: bold;">Products</a></td>
+                                    <td><a href="contact.html" style="text-decoration: none; color: #1e293b;">Contact</a></td>
+                                    <td><a href="login.html" style="text-decoration: none; color: #1e293b;">Login</a></td>
+                                    <td>
+                                        <a href="cart.html" style="text-decoration: none; color: #1e293b; position: relative;">
+                                            Cart (<span class="cart-count">0</span>)
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Products Section -->
+        <tr>
+            <td bgcolor="#ffffff" style="padding: 40px 5%;">
+                <h1 align="center" style="font-size: 36px; color: #0f172a; margin-bottom: 40px;">Premium Essentials</h1>
+                
+                <table width="100%" border="0" cellpadding="0" cellspacing="20">
+                    <!-- Row 1 -->
+                    <tr>
+                        <!-- Product 1 -->
+                        <td width="33%" valign="top" bgcolor="#ffffff" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                            <a href="productdatails.html?id=p1">
+                                <img src="images/product1.png" alt="Midnight Silk Blouse" width="100%" style="border-radius: 8px;">
+                            </a>
+                            <h3 style="margin: 15px 0 10px; color: #0f172a;">Midnight Silk Blouse</h3>
+                            <p style="color: #4f46e5; font-weight: bold; font-size: 20px; margin-bottom: 20px;">Rs. 12,500</p>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <button onclick="addCart({id:'p1', name:'Midnight Silk Blouse', price:12500, image:'images/product1.png'})" style="width:100%; background: #0f172a; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Add Cart
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="checkout.html" onclick="addCart({id:'p1', name:'Midnight Silk Blouse', price:12500, image:'images/product1.png'})" style="width:100%; display: block; text-align: center; border: 2px solid #e2e8f0; color: #0f172a; text-decoration: none; padding: 8px; border-radius: 6px; font-weight: bold;">
+                                            Buy Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <!-- Product 2 -->
+                        <td width="33%" valign="top" bgcolor="#ffffff" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                            <a href="productdatails.html?id=p2">
+                                <img src="./images/product2.jpg" alt="Tailored Linen Trousers" width="100%" style="border-radius: 8px;">
+                            </a>
+                            <h3 style="margin: 15px 0 10px; color: #0f172a;">Tailored Linen Trousers</h3>
+                            <p style="color: #4f46e5; font-weight: bold; font-size: 20px; margin-bottom: 20px;">Rs. 9,800</p>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <button onclick="addCart({id:'p2', name:'Tailored Linen Trousers', price:9800, image:'./images/product2.jpg'})" style="width:100%; background: #0f172a; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Add Cart
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="checkout.html" onclick="addCart({id:'p2', name:'Tailored Linen Trousers', price:9800, image:'./images/product2.jpg'})" style="width:100%; display: block; text-align: center; border: 2px solid #e2e8f0; color: #0f172a; text-decoration: none; padding: 8px; border-radius: 6px; font-weight: bold;">
+                                            Buy Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <!-- Product 3 -->
+                        <td width="33%" valign="top" bgcolor="#ffffff" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                            <a href="productdatails.html?id=p3">
+                                <img src="images/product3.png" alt="Cashmere Blend Coat" width="100%" style="border-radius: 8px;">
+                            </a>
+                            <h3 style="margin: 15px 0 10px; color: #0f172a;">Cashmere Blend Coat</h3>
+                            <p style="color: #4f46e5; font-weight: bold; font-size: 20px; margin-bottom: 20px;">Rs. 24,000</p>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <button onclick="addCart({id:'p3', name:'Cashmere Blend Coat', price:24000, image:'images/product3.png'})" style="width:100%; background: #0f172a; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Add Cart
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="checkout.html" onclick="addCart({id:'p3', name:'Cashmere Blend Coat', price:24000, image:'images/product3.png'})" style="width:100%; display: block; text-align: center; border: 2px solid #e2e8f0; color: #0f172a; text-decoration: none; padding: 8px; border-radius: 6px; font-weight: bold;">
+                                            Buy Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr>
+                        <!-- Product 4 -->
+                        <td width="33%" valign="top" bgcolor="#ffffff" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                            <a href="productdatails.html?id=p4">
+                                <img src="images/product4.png" alt="Minimalist Leather Tote" width="100%" style="border-radius: 8px;">
+                            </a>
+                            <h3 style="margin: 15px 0 10px; color: #0f172a;">Minimalist Leather Tote</h3>
+                            <p style="color: #4f46e5; font-weight: bold; font-size: 20px; margin-bottom: 20px;">Rs. 15,500</p>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <button onclick="addCart({id:'p4', name:'Minimalist Leather Tote', price:15500, image:'images/product4.png'})" style="width:100%; background: #0f172a; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Add Cart
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="checkout.html" onclick="addCart({id:'p4', name:'Minimalist Leather Tote', price:15500, image:'images/product4.png'})" style="width:100%; display: block; text-align: center; border: 2px solid #e2e8f0; color: #0f172a; text-decoration: none; padding: 8px; border-radius: 6px; font-weight: bold;">
+                                            Buy Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <!-- Product 5 -->
+                        <td width="33%" valign="top" bgcolor="#ffffff" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                            <a href="productdatails.html?id=p5">
+                                <img src="images/product5.png" alt="Gold Vermeil Hoops" width="100%" style="border-radius: 8px;">
+                            </a>
+                            <h3 style="margin: 15px 0 10px; color: #0f172a;">Gold Vermeil Hoops</h3>
+                            <p style="color: #4f46e5; font-weight: bold; font-size: 20px; margin-bottom: 20px;">Rs. 4,200</p>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <button onclick="addCart({id:'p5', name:'Gold Vermeil Hoops', price:4200, image:'images/product5.png'})" style="width:100%; background: #0f172a; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Add Cart
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="checkout.html" onclick="addCart({id:'p5', name:'Gold Vermeil Hoops', price:4200, image:'images/product5.png'})" style="width:100%; display: block; text-align: center; border: 2px solid #e2e8f0; color: #0f172a; text-decoration: none; padding: 8px; border-radius: 6px; font-weight: bold;">
+                                            Buy Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <!-- Product 6 -->
+                        <td width="33%" valign="top" bgcolor="#ffffff" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                            <a href="productdatails.html?id=p6">
+                                <img src="images/product6.png" alt="Suede Loafers" width="100%" style="border-radius: 8px;">
+                            </a>
+                            <h3 style="margin: 15px 0 10px; color: #0f172a;">Classic Suede Loafers</h3>
+                            <p style="color: #4f46e5; font-weight: bold; font-size: 20px; margin-bottom: 20px;">Rs. 14,000</p>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <button onclick="addCart({id:'p6', name:'Classic Suede Loafers', price:14000, image:'images/product6.png'})" style="width:100%; background: #0f172a; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                                            Add Cart
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="checkout.html" onclick="addCart({id:'p6', name:'Classic Suede Loafers', price:14000, image:'images/product6.png'})" style="width:100%; display: block; text-align: center; border: 2px solid #e2e8f0; color: #0f172a; text-decoration: none; padding: 8px; border-radius: 6px; font-weight: bold;">
+                                            Buy Now
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td bgcolor="#0f172a" style="padding: 60px 5%; color: #94a3b8;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="left" style="font-size: 24px; font-weight: bold; color: white;">
+                            Fashion<span style="color: #4f46e5;">Hub</span>
+                        </td>
+                        <td align="right">
+                            © 2026. 20-COM.069-RASHMILA
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('fashionHubCart')) || [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+        });
+
+        function updateCartBadge() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badges = document.querySelectorAll('.cart-count');
+            badges.forEach(badge => {
+                badge.innerText = totalCount;
+            });
+        }
+
+        function addCart(product) {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem('fashionHubCart', JSON.stringify(cart));
+            updateCartBadge();
+            alert('Product added to cart!');
+        }
+    </script>
+</body>
+
+</html>
